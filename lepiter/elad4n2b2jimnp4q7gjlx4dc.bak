@@ -1,0 +1,178 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:44:23.215-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:44:23.215-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mP8qPDv+DQC3LCc6CKTYBg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:46:43.125-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:46:56.052-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CNuBRDv+DQC3NYMCCKTYBg=="
+				},
+				"code" : "\"Leer archivo JSON y parsear\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\t\t\t\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Recolectar todas las conversaciones disponibles\"\r\nallConversations := OrderedCollection new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    (chatgptSharings isKindOf: Array) ifTrue: [\r\n        chatgptSharings do: [:chatgptSharing |\r\n            conversations := (chatgptSharing isKindOf: Dictionary)\r\n                ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            (conversations isKindOf: Array) ifTrue: [\r\n                allConversations addAll: conversations.\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Resultado: lista con todas las conversaciones\"\r\nallConversations\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:44:45.346-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:44:47.496-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0LB8PTv+DQC3L/FDCKTYBg=="
+				},
+				"code" : "\"Leer archivo JSON y parsear\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\t\t\t\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Recolectar conversaciones que contienen códigos\"\r\nconversationsWithCode := OrderedCollection new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    (chatgptSharings isKindOf: Array) ifTrue: [\r\n        chatgptSharings do: [:chatgptSharing |\r\n            conversations := (chatgptSharing isKindOf: Dictionary)\r\n                ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            (conversations isKindOf: Array) ifTrue: [\r\n                conversations do: [:conv |\r\n                    listOfCode := (conv isKindOf: Dictionary)\r\n                        ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n                        ifFalse: [#()].\r\n\r\n                    \"Filtrar solo si tiene al menos un código con contenido\"\r\n                    (listOfCode detect: [:codeItem |\r\n                        (codeItem isKindOf: Dictionary) and: [\r\n                            (codeItem at: 'Content' ifAbsent: [nil]) notNil\r\n                        ]\r\n                    ] ifNone: [nil]) \r\n                    ifNotNil: [\r\n                        conversationsWithCode add: conv.\r\n                    ].\r\n                ].\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Resultado: lista de conversaciones que contienen código\"\r\nconversationsWithCode\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:54:30.241-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T17:54:57.455-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6HpZYDv+DQC3O54ZCKTYBg=="
+				},
+				"code" : "\"Leer archivo JSON y parsear\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\t\t\t\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Diccionario de lenguaje -> conversaciones\"\r\ndictLenguajesConvs := Dictionary new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    (chatgptSharings isKindOf: Array) ifTrue: [\r\n        chatgptSharings do: [:chatgptSharing |\r\n            conversations := (chatgptSharing isKindOf: Dictionary)\r\n                ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            (conversations isKindOf: Array) ifTrue: [\r\n                conversations do: [:conv |\r\n                    listOfCode := (conv isKindOf: Dictionary)\r\n                        ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n                        ifFalse: [#()].\r\n\r\n                    \"Procesar cada fragmento de código para detectar lenguajes y agrupar conversaciones\"\r\n                    listOfCode do: [:codeItem |\r\n                        (codeItem isKindOf: Dictionary) ifTrue: [\r\n                            content := codeItem at: 'Content' ifAbsent: [nil].\r\n                            content ifNotNil: [\r\n                                | rawType typeCode |\r\n\r\n                                rawType := codeItem at: 'Type' ifAbsent: [nil].\r\n                                typeCode := nil.\r\n                                rawType ifNotNil: [\r\n                                    typeCode := (rawType isKindOf: Array) \r\n                                        ifTrue: [rawType first] \r\n                                        ifFalse: [rawType].\r\n                                ].\r\n                                typeCode ifNil: [typeCode := 'desconocido'].\r\n\r\n                                \"Si el lenguaje no está en el diccionario, inicializar con colección vacía\"\r\n                                dictLenguajesConvs at: typeCode\r\n                                    ifAbsentPut: [OrderedCollection new].\r\n\r\n                                \"Agregar la conversación si no está ya incluida para evitar duplicados\"\r\n                                (dictLenguajesConvs at: typeCode)\r\n                                    ifNone: [OrderedCollection new].\r\n                                (dictLenguajesConvs at: typeCode)\r\n                                    includes: conv\r\n                                    ifFalse: [dictLenguajesConvs at: typeCode add: conv].\r\n                            ].\r\n                        ].\r\n                    ].\r\n                ].\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Devolver el diccionario para navegación\"\r\ndictLenguajesConvs\r\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-23T17:44:23.196-03:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-23T17:44:36.696-03:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "PREUGUNTA1.1"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "60b52a3c-3bfe-0d00-b72b-d87908a4d806"
+	}
+}

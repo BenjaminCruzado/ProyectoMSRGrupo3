@@ -1,0 +1,795 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:17:29.668-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:38.331-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oFmy6wv+DQCuOkzpDNTqXw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "¿Qué tipos de problemas (bugs, dudas de sintaxis, refactorización, etc.) son más frecuentes en los avisos que los desarrolladores plantean a ChatGPT?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:17.018-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:44.034-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6MLbFQz+DQCIsh3MBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paso 1: Cargar los datos JSON"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:20.554-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:58.255-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "EJwRFgz+DQCIs3VGBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Se parte de un archivo JSON ( 1.json) que contiene los avisos. Se carga el contenido y se parsea a una estructura interna tipo diccionario."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:05.811-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:08.218-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "OC3EGAz+DQCIxeCMBSfUAA=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()]."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:23.691-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:20.996-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+HlBFgz+DQCItG0BBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paso 2: Definir categorías y palabras clave"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:29:28.025-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:35.746-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qJuDFgz+DQCItW2+BSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Se establecen categorías temáticas relacionadas con problemas típicos en el desarrollo de software: depuración, errores de sintaxis, refactorización, pruebas, documentación, diseño, manejo de errores, seguridad, dependencias, rendimiento y educación."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:45.075-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:46.533-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "OEwbGwz+DQCI2tqXBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Cada categoría contiene una lista de palabras clave que indican su presencia."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:30:49.141-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:31:35.168-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CFdZGwz+DQCI4FHUBSfUAA=="
+				},
+				"code" : "dictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token' 'parse failure').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example' 'readme' 'javadoc' 'uml').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline' 'mvc' 'singleton' 'microservices').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling' put: #('error handling' 'exception handling' 'try catch' 'failover' 'rollback' 'transaction management').\r\ndictCategorias at: 'Security' put: #('secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption' 'csrf' 'xss' 'sql injection').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration' 'docker' 'maven' 'gradle').\r\ndictCategorias at: 'Performance and Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency' 'threading' 'caching').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class' 'coding bootcamp').\r\ndictCategorias at: 'General Technical Queries' put: #('information' 'explain' 'description' 'author' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'question' 'query').\r\ndictCategorias at: 'Other Technical Topics' put: #('api' 'rest' 'graphql' 'http' 'https' 'json' 'xml' 'serialization' 'deserialization' 'tcp' 'udp' 'network' 'protocol' 'cloud' 'aws' 'azure' 'gcp')."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:32:21.238-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:33:11.194-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "8KDWIAz+DQCI8CCeBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paso 3: Inicializar resultado"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:32:25.762-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:33:16.849-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0KgbIQz+DQCI8Yk7BSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Se crea un diccionario inicial resultadocon claves para cada categoría inicializadas en 0, y otro para avisos que no coinciden en \"Sin categoría\"."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:33:43.538-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:33:45.833-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UG2+JQz+DQCJCcykBSfUAA=="
+				},
+				"code" : "resultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\nresultado at: 'Sin categoría' put: 0."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:32:31.083-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:33:27.328-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+NlsIQz+DQCI8oN/BSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paso 4: Clasificación y recuento"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:32:33.955-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:33:32.211-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "uKyYIQz+DQCI8xDHBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Se analiza cada mensaje para determinar a qué categoría pertenece, contando la cantidad de palabras clave que aparecen y asignando la categoría más frecuente. Si ninguna categoría es relevante, se asigna \"Sin categoría\"."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:34:12.389-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:37:59.675-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "iKh2Jwz+DQCJFrT8BSfUAA=="
+				},
+				"code" : "sources do: [:source |\r\n  chatgptSharings := (source isKindOf: Dictionary)\r\n    ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n    ifFalse: [#()].\r\n  chatgptSharings do: [:chatgptSharing |\r\n    conversations := (chatgptSharing isKindOf: Dictionary)\r\n      ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n      ifFalse: [#()].\r\n    conversations do: [:conv |\r\n      promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n        ifTrue: [(conv at: 'Prompt') asLowercase]\r\n        ifFalse: [''].\r\n      maxCount := 0.\r\n      maxCategory := ''.\r\n      dictCategorias keysAndValuesDo: [:cat :palabras |\r\n        | count |\r\n        count := 0.\r\n        palabras do: [:palabra |\r\n          (promptText includesSubstring: palabra) ifTrue: [count := count + 1].\r\n        ].\r\n        count > maxCount ifTrue: [\r\n          maxCount := count.\r\n          maxCategory := cat.\r\n        ].\r\n      ].\r\n      (maxCategory isEmpty or: [maxCount = 0])\r\n        ifTrue: [resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1)]\r\n        ifFalse: [resultado at: maxCategory put: ((resultado at: maxCategory) + 1)].\r\n    ].\r\n  ].\r\n].\r\n\t\t"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:32:36.816-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:01.897-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gFTEIQz+DQCI9IiVBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paso 5: Mostrar resultados absolutos"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:05.149-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:10.065-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SEtWNQz+DQCJrDrcBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Impresión de la cantidad de avisos clasificados en cada categoría."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:12.409-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:16.276-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qBLFNQz+DQCJst12BSfUAA=="
+				},
+				"code" : "Transcript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n  Transcript show: cat , ': ' , count printString; cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:31.002-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:33.621-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kMfgNgz+DQCJuE8mBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paso 6: Mostrar porcentaje por categoría (excluyendo \"Sin categoría\")"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:36.58-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:47.292-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oOQ1Nwz+DQCJvv+QBSfUAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Cálculo y presentación porcentual de cada categoría respecto al total de avisos relevantes.\t"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:51.746-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:38:53.597-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0E4dOAz+DQCJyRTCBSfUAA=="
+				},
+				"code" : "| totalRelevant |\r\ntotalRelevant := 0.\r\nresultado keysAndValuesDo: [:cat :count |\r\n  (cat ~= 'Sin categoría') ifTrue: [\r\n    totalRelevant := totalRelevant + count.\r\n  ].\r\n].\r\nTranscript show: 'Distribución porcentual por categoría (excluye Sin categoría):'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n  (cat ~= 'Sin categoría') ifTrue: [\r\n    | percentage |\r\n    percentage := (count / totalRelevant) * 100.\r\n    Transcript show: cat , ': ' , (percentage printShowingDecimalPlaces: 2) , '%'; cr.\r\n  ].\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:39:14.908-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:39:23.653-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SL9+OQz+DQCJz6jeBSfUAA=="
+				},
+				"code" : "Transcript open.\t"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-21T09:17:29.646-03:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-21T09:17:36.275-03:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Pregunta 2"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "b003b2eb-0bfe-0d00-ae39-30880cd4ea5f"
+	}
+}

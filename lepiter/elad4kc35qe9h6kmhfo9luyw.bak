@@ -1,0 +1,280 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:05:09.255-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:05:09.255-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WA9whjv+DQC3YpbyCKTYBg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:05:37.665-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:05:39.122-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6I8hiDv+DQC3Y/0DCKTYBg=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:05:53.205-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:05:54.524-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CK8OiTv+DQC3aSIuCKTYBg=="
+				},
+				"code" : "allConversations := OrderedCollection new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n        allConversations addAll: conversations.\r\n    ].\r\n].\r\n\r\n\"Retorna para inspección/navegación\"\r\nallConversations\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:06:09.957-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:06:11.624-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "iEwOijv+DQC3b+18CKTYBg=="
+				},
+				"code" : "conversationsWithCode := OrderedCollection new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n        conversations do: [:conv |\r\n            listOfCode := (conv isKindOf: Dictionary)\r\n                ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n            (listOfCode detect: [:codeItem |\r\n                (codeItem isKindOf: Dictionary) and: [\r\n                    (codeItem at: 'Content' ifAbsent: [nil]) notNil\r\n                ]\r\n            ] ifNone: [nil]) ifNotNil: [\r\n                conversationsWithCode add: conv.\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Retorna para inspección/navegación\"\r\nconversationsWithCode\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:06:37.293-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:06:40.841-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yGmvizv+DQC3dbjqCKTYBg=="
+				},
+				"code" : "| porcentaje totalConversaciones totalFragmentosCodigo |\r\n\r\ntotalConversaciones := allConversations size.\r\ntotalFragmentosCodigo := conversationsWithCode size.\r\n\r\nporcentaje := 0.\r\ntotalConversaciones > 0 ifTrue: [\r\n    porcentaje := (totalFragmentosCodigo asFloat / totalConversaciones) * 100.\r\n].\r\n\r\nporcentaje\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:07:23.956-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:07:30.92-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "IG93jjv+DQC3f80PCKTYBg=="
+				},
+				"code" : "dictLenguajesConvs := Dictionary new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n\r\n        conversations do: [:conv |\r\n            listOfCode := (conv isKindOf: Dictionary)\r\n                ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            listOfCode do: [:codeItem |\r\n                (codeItem isKindOf: Dictionary) ifTrue: [\r\n                    content := codeItem at: 'Content' ifAbsent: [nil].\r\n                    content ifNotNil: [\r\n                        | rawType typeCode convsForLang |\r\n                        rawType := codeItem at: 'Type' ifAbsent: [nil].\r\n                        typeCode := nil.\r\n                        rawType ifNotNil: [\r\n                            typeCode := (rawType isKindOf: Array) ifTrue: [rawType first] ifFalse: [rawType].\r\n                        ].\r\n                        typeCode ifNil: [typeCode := 'desconocido'].\r\n\r\n                        convsForLang := dictLenguajesConvs at: typeCode ifAbsentPut: [OrderedCollection new].\r\n                        (convsForLang includes: conv) ifFalse: [convsForLang add: conv].\r\n                    ].\r\n                ].\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\ndictLenguajesConvs\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:07:38.179-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:07:38.179-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "uHVQjzv+DQC3hXbsCKTYBg=="
+				},
+				"code" : ""
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-23T18:05:09.237-03:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-23T18:05:16.56-03:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Pregunta1Final"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "08c96f86-3bfe-0d00-b761-ea1e08a4d806"
+	}
+}

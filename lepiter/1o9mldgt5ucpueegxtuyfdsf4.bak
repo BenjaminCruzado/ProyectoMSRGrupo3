@@ -1,0 +1,416 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T09:29:44.43-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T09:29:44.43-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "sI2m+ff9DQCHOCjeDwlHHA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T09:29:50.134-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T09:29:55.017-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "8Jb9+ff9DQCHOSPMDwlHHA=="
+				},
+				"code" : "| dictionary sources chatgptSharings conversations firstConv promptText dictCategorias categorias resultado |\r\n\r\n\"Paso 1: Cargar JSON y ubicar primer prompt\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Suponemos que hay al menos un source, uno chatgptSharing y una conversacion\"\r\nchatgptSharings := (sources first at: 'ChatgptSharing' ifAbsent: [#()]).\r\nconversations := (chatgptSharings first at: 'Conversations' ifAbsent: [#()]).\r\nfirstConv := conversations first.\r\n\r\npromptText := firstConv at: 'Prompt' ifAbsent: [''].\r\npromptText := promptText asLowercase.\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice').\r\ndictCategorias at: 'Error Handling & Security' put: #('error handling' 'exception handling' 'secure' 'vulnerability').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library').\r\ndictCategorias at: 'Performance & Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak').\r\n\r\n\"Paso 3: Buscar palabras clave en prompt\"\r\nresultado := Dictionary new.\r\ndictCategorias keysAndValuesDo: [:cat :palabras |\r\n    | count |\r\n    count := 0.\r\n    palabras do: [:palabra |\r\n        (promptText includesSubstring: palabra)\r\n            ifTrue: [count := count + 1].\r\n    ].\r\n    resultado at: cat put: count.\r\n].\r\n\r\n\"Paso 4: Mostrar resultados\"\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript\r\n        show: cat , ': ' , count printString;\r\n        cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T09:46:30.574-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T10:46:33.939-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "sBefNfj9DQCHPxVJDwlHHA=="
+				},
+				"code" : "| dictionary sources chatgptSharings conversations firstConv promptText dictCategorias resultado maxCount maxCategory |\r\n\r\n\"Paso 1: Cargar JSON y ubicar primer prompt\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Suponemos que hay al menos un source, uno chatgptSharing y una conversacion\"\r\nchatgptSharings := (sources first at: 'ChatgptSharing' ifAbsent: [#()]).\r\nconversations := (chatgptSharings first at: 'Conversations' ifAbsent: [#()]).\r\nfirstConv := conversations first.\r\n\r\npromptText := firstConv at: 'Prompt' ifAbsent: [''].\r\npromptText := promptText asLowercase.\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice').\r\ndictCategorias at: 'Error Handling & Security' put: #('error handling' 'exception handling' 'secure' 'vulnerability').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library').\r\ndictCategorias at: 'Performance & Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives').\r\ndictCategorias at: 'General Non-Technical Queries' put: #('information' 'explain' 'description' 'author' 'name' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'plan' 'compassionate').\r\n\r\n\"Paso 3: Inicializar resultado en 0 para todas las categorías\"\r\nresultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\n\r\n\"Paso 4: Buscar palabras clave en prompt y hallar la categoría con más coincidencias\"\r\nmaxCount := 0.\r\nmaxCategory := ''.\r\n\r\ndictCategorias keysAndValuesDo: [:cat :palabras |\r\n    | count |\r\n    count := 0.\r\n    palabras do: [:palabra |\r\n        (promptText includesSubstring: palabra)\r\n            ifTrue: [count := count + 1].\r\n    ].\r\n\r\n    count > maxCount ifTrue: [\r\n        maxCount := count.\r\n        maxCategory := cat.\r\n    ].\r\n].\r\n\r\n\"Paso 5: Aumentar en 1 el contador para la categoría con más coincidencias\"\r\nmaxCategory isEmpty ifFalse: [\r\n    resultado at: maxCategory put: ((resultado at: maxCategory) + 1)\r\n].\r\n\r\n\"Paso 6: Mostrar resultados\"\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript\r\n        show: cat , ': ' , count printString;\r\n        cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T10:27:05.306-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T11:13:22.106-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kCe+xvj9DQCCepZrBQJxwQ=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory |\r\n\r\n\"Paso 1: Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice').\r\ndictCategorias at: 'Error Handling & Security' put: #('error handling' 'exception handling' 'secure' 'vulnerability').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library').\r\ndictCategorias at: 'Performance & Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives').\r\ndictCategorias at: 'General Non-Technical Queries' put: #('information' 'explain' 'description' 'author' 'name' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'plan' 'compassionate').\r\n\r\n\"Paso 3: Inicializar resultado para cada categoría\"\r\nresultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\n\r\n\"Paso 4: Recorrer la estructura para extraer y analizar prompts\"\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n\r\n        conversations do: [:conv |\r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | count |\r\n                count := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra)\r\n                        ifTrue: [count := count + 1]\r\n                ].\r\n                count > maxCount ifTrue: [\r\n                    maxCount := count.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n\r\n            maxCategory isEmpty ifFalse: [\r\n                resultado at: maxCategory put: ((resultado at: maxCategory) + 1)\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Paso 5: Mostrar resultado final\"\r\nTranscript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript show: cat , ': ' , count printString; cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T11:13:25.104-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T11:19:33.328-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gIFubPn9DQCL4uOGB/kWvQ=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory |\r\n\r\n\"Paso 1: Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling & Security' put: #('error handling' 'exception handling' 'secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration').\r\ndictCategorias at: 'Performance & Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class').\r\ndictCategorias at: 'General Non-Technical Queries' put: #('information' 'explain' 'description' 'author' 'name' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'plan' 'compassionate' 'question' 'query').\r\n\r\n\"Paso 3: Inicializar resultado para cada categoría\"\r\nresultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\n\"Agregar categoría para prompts sin categoría\"\r\nresultado at: 'Sin categoría' put: 0.\r\n\r\n...\r\n\r\n\"Paso 4: Recorrer la estructura para extraer y analizar prompts\"\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n\r\n        conversations do: [:conv |\r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | count |\r\n                count := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra)\r\n                        ifTrue: [count := count + 1]\r\n                ].\r\n                count > maxCount ifTrue: [\r\n                    maxCount := count.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n\r\n            \"Si no hay categoria asignada, asignar 'Sin categoría'\"\r\n            (maxCategory isEmpty or: [maxCount = 0])\r\n                ifTrue: [resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1)]\r\n                ifFalse: [resultado at: maxCategory put: ((resultado at: maxCategory) + 1)].\r\n        ].\r\n    ].\r\n].\t\r\n\r\n\"Paso 5: Mostrar resultado final\"\r\nTranscript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript show: cat , ': ' , count printString; cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T11:23:25.476-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T11:36:19.98-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "oHQ3kPn9DQCMC2qpB/kWvQ=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory sinCategoriaPrompts palabrasFrecuentes stopWords Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling & Security' put: #('error handling' 'exception handling' 'secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration').\r\ndictCategorias at: 'Performance & Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class').\r\ndictCategorias at: 'General Non-Technical Queries' put: #('information' 'explain' 'description' 'author' 'name' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'plan' 'compassionate' 'question' 'query').\r\n\r\n\"Paso 3: Inicializar resultado para categorías\"\r\nresultado := Dictionary new.\r\ndictCategorias keys do: [:cat | resultado at: cat put: 0].\r\nresultado at: 'Sin categoría' put: 0.\r\n\r\n\"Paso 4: Recopilar prompts y asignar categorías\"\r\nsinCategoriaPrompts := OrderedCollection new.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n\r\n        conversations do: [:conv |\r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | count |\r\n                count := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra)\r\n                        ifTrue: [count := count + 1].\r\n                ].\r\n                count > maxCount ifTrue: [\r\n                    maxCount := count.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n\r\n            (maxCategory isEmpty or: [maxCount = 0])\r\n                ifTrue: [\r\n                    resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1).\r\n                    sinCategoriaPrompts add: promptText.\r\n                ]\r\n                ifFalse: [\r\n                    resultado at: maxCategory put: ((resultado at: maxCategory) + 1)\r\n                ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Paso 5: Lista de stopwords en inglés\"\r\nstopWords := #('the' 'and' 'for' 'that' 'with' 'you' 'this' 'have' 'but' 'not' 'are' 'from' 'was' 'all' 'they' 'his' 'her' 'she' 'him' 'has' 'had' 'will' 'would' 'there' 'their' 'what' 'when' 'which' 'your' 'can' 'were' 'one' 'about' 'who' 'get' 'like' 'just' 'out' 'some' 'them' 'then' 'now' 'how' 'our' 'more' 'also' 'could' 'into' 'than' 'other' 'because' 'these' 'over' 'after' 'first' 'may' 'any' 'time' 'only' 'new' 'very' 'even' 'most' 'make' 'such' 'well' 'way' 'many' 'should' 'very').\r\n\r\n\"Paso 6: Contar palabras frecuentes en prompts sin categoría\"\r\npalabrasFrecuentes := Dictionary new.\r\n\r\nsinCategoriaPrompts do: [:prompt |\r\n    | palabras |\r\n    palabras := prompt substrings: ' '.\r\n    palabras do: [:eachPalabra |\r\n        | palabraMinuscula |\r\n        palabraMinuscula := eachPalabra asLowercase.\r\n        (palabraMinuscula size > 2 and: [(stopWords includes: palabraMinuscula)not]) ifTrue: [\r\n            palabrasFrecuentes at: palabraMinuscula ifAbsentPut: [0].\r\n            palabrasFrecuentes at: palabraMinuscula put: ((palabrasFrecuentes at: palabraMinuscula) + 1).\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Paso 7: Mostrar palabras frecuentes\"\r\nTranscript show: 'Palabras frecuentes en prompts sin categoria:'; cr.\r\npalabrasFrecuentes keysAndValuesDo: [:palabra :frecuencia |\r\n    Transcript show: palabra, ': ', frecuencia printString; cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T11:49:44.506-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T12:12:57.966-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kIpV7vn9DQCruIleAfGcrw=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory sinCategoriaPrompts displayCount |\r\n \r\n\"Paso 1: Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling & Security' put: #('error handling' 'exception handling' 'secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration').\r\ndictCategorias at: 'Performance & Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class').\r\ndictCategorias at: 'General Non-Technical Queries' put: #('information' 'explain' 'description' 'author' 'name' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'plan' 'compassionate' 'question' 'query').\r\n\r\n\"Paso 3: Inicializar resultado para categorías\"\r\nresultado := Dictionary new.\r\ndictCategorias keys do: [:cat | resultado at: cat put: 0].\r\nresultado at: 'Sin categoría' put: 0.\r\n\r\n\"Paso 4: Recorrer la estructura para extraer y analizar prompts\"\r\nsinCategoriaPrompts := OrderedCollection new.\r\nsources do: [:source |\r\n    \r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n        conversations do: [:conv |\r\n          \r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | palabraCount |\r\n                palabraCount := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra)\r\n                        ifTrue: [palabraCount := palabraCount + 1].\r\n                ].\r\n                palabraCount > maxCount ifTrue: [\r\n                    maxCount := palabraCount.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n\r\n            (maxCategory isEmpty or: [maxCount = 0])\r\n                ifTrue: [\r\n                    resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1).\r\n                    sinCategoriaPrompts add: promptText.\r\n                ]\r\n                ifFalse: [\r\n                    resultado at: maxCategory put: ((resultado at: maxCategory) + 1)\r\n                ].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Paso 5: Mostrar resultado final\"\r\nTranscript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:category :count |\r\n    Transcript show: category , ': ' , count printString; cr.\r\n].\r\n\r\n\"Paso 6: Mostrar primeros 10 prompts sin categoría\"\r\ndisplayCount := 0.\r\nsinCategoriaPrompts do: [:prompt |\r\n    (displayCount < 10) ifTrue: [\r\n        Transcript show: 'Prompt sin categoría: ', prompt; cr.\r\n        displayCount := displayCount + 1.\r\n    ] ifFalse: [^self].\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T15:48:43.872-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:00:32.256-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kEwHRf39DQCHayWPA1ulNQ=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory |\r\n\r\n\"Paso 1: Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token' 'parse failure').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example' 'readme' 'javadoc' 'uml').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline' 'mvc' 'singleton' 'microservices').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling' put: #('error handling' 'exception handling' 'try catch' 'failover' 'rollback' 'transaction management').\r\ndictCategorias at: 'Security' put: #('secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption' 'csrf' 'xss' 'sql injection').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration' 'docker' 'maven' 'gradle').\r\ndictCategorias at: 'Performance and Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency' 'threading' 'caching').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class' 'coding bootcamp').\r\ndictCategorias at: 'General Technical Queries' put: #('information' 'explain' 'description' 'author' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'question' 'query').\r\ndictCategorias at: 'Other Technical Topics' put: #('api' 'rest' 'graphql' 'http' 'https' 'json' 'xml' 'serialization' 'deserialization' 'tcp' 'udp' 'network' 'protocol' 'cloud' 'aws' 'azure' 'gcp').\r\n\r\n\r\n\"Paso 3: Inicializar resultado para cada categoría\"\r\nresultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\n\"Agregar categoría para prompts sin categoría\"\r\nresultado at: 'Sin categoría' put: 0.\r\n\r\n...\r\n\r\n\"Paso 4: Recorrer la estructura para extraer y analizar prompts\"\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n\r\n        conversations do: [:conv |\r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | count |\r\n                count := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra)\r\n                        ifTrue: [count := count + 1]\r\n                ].\r\n                count > maxCount ifTrue: [\r\n                    maxCount := count.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n\r\n            \"Si no hay categoria asignada, asignar 'Sin categoría'\"\r\n            (maxCategory isEmpty or: [maxCount = 0])\r\n                ifTrue: [resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1)]\r\n                ifFalse: [resultado at: maxCategory put: ((resultado at: maxCategory) + 1)].\r\n        ].\r\n    ].\r\n].\t\r\n\r\n\"Paso 5: Mostrar resultado final\"\r\nTranscript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript show: cat , ': ' , count printString; cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T08:53:25.372-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:03:34.772-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YLitlQv+DQCmrXFlBgluVg=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory totalRelevant |\r\n\r\n\"Paso 1: Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token' 'parse failure').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example' 'readme' 'javadoc' 'uml').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline' 'mvc' 'singleton' 'microservices').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling' put: #('error handling' 'exception handling' 'try catch' 'failover' 'rollback' 'transaction management').\r\ndictCategorias at: 'Security' put: #('secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption' 'csrf' 'xss' 'sql injection').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration' 'docker' 'maven' 'gradle').\r\ndictCategorias at: 'Performance and Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency' 'threading' 'caching').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class' 'coding bootcamp').\r\ndictCategorias at: 'General Technical Queries' put: #('information' 'explain' 'description' 'author' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'question' 'query').\r\ndictCategorias at: 'Other Technical Topics' put: #('api' 'rest' 'graphql' 'http' 'https' 'json' 'xml' 'serialization' 'deserialization' 'tcp' 'udp' 'network' 'protocol' 'cloud' 'aws' 'azure' 'gcp').\r\n\r\n\"Paso 3: Inicializar resultado\"\r\nresultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\nresultado at: 'Sin categoría' put: 0.\r\n\r\n\"Paso 4: Recorrer y clasificar\"\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n        conversations do: [:conv |\r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | count |\r\n                count := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra) ifTrue: [count := count + 1].\r\n                ].\r\n                count > maxCount ifTrue: [\r\n                    maxCount := count.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n            (maxCategory isEmpty or: [maxCount = 0])\r\n                ifTrue: [resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1)]\r\n                ifFalse: [resultado at: maxCategory put: ((resultado at: maxCategory) + 1)].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Paso 5: Mostrar frecuencia absoluta\"\r\nTranscript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript show: cat , ': ' , count printString; cr.\r\n].\r\n\r\n\"Paso 6: Calcular y mostrar porcentaje (excluyendo 'Sin categoría')\"\r\ntotalRelevant := 0.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    (cat ~= 'Sin categoría') ifTrue: [totalRelevant := totalRelevant + count].\r\n].\r\nTranscript show: 'Distribución porcentual por categoría (excluye Sin categoría):'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    (cat ~= 'Sin categoría') ifTrue: [\r\n        | percentage |\r\n        percentage := (count / totalRelevant) * 100.\r\n        Transcript show: cat , ': ' , percentage printString , '%'; cr.\r\n    ].\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:08:25.968-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T09:08:49.68-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gCVKywv+DQCuDnqoDNTqXw=="
+				},
+				"code" : "| json dictionary sources chatgptSharings conversations promptText dictCategorias resultado maxCount maxCategory totalRelevant |\r\n\r\n\"Paso 1: Cargar JSON\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Paso 2: Definir categorías y palabras clave\"\r\ndictCategorias := Dictionary new.\r\ndictCategorias at: 'Debugging and Bugs' put: #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').\r\ndictCategorias at: 'Syntax Errors' put: #('syntax error' 'compile error' 'parse error' 'invalid syntax' 'typo' 'missing semicolon' 'unexpected token' 'parse failure').\r\ndictCategorias at: 'Refactoring and Optimization' put: #('refactor' 'optimize' 'performance' 'clean code' 'improve efficiency' 'reduce complexity' 'best practice' 'memory usage' 'speed up').\r\ndictCategorias at: 'Testing' put: #('test' 'unit test' 'integration test' 'mock' 'assertion' 'test case' 'coverage' 'test suite' 'regression' 'validation').\r\ndictCategorias at: 'Explanation and Documentation' put: #('explain' 'document' 'comment' 'tutorial' 'guide' 'instruction' 'help' 'manual' 'description' 'note' 'example' 'readme' 'javadoc' 'uml').\r\ndictCategorias at: 'Design and Implementation' put: #('design' 'architecture' 'pattern' 'implement' 'feature' 'module' 'component' 'framework' 'interface' 'workflow' 'pipeline' 'mvc' 'singleton' 'microservices').\r\ndictCategorias at: 'Code Review' put: #('review' 'suggest' 'improve' 'best practice' 'code style' 'refinement' 'feedback' 'analysis' 'critique').\r\ndictCategorias at: 'Error Handling' put: #('error handling' 'exception handling' 'try catch' 'failover' 'rollback' 'transaction management').\r\ndictCategorias at: 'Security' put: #('secure' 'vulnerability' 'attack' 'threat' 'protection' 'authentication' 'authorization' 'safety' 'encryption' 'csrf' 'xss' 'sql injection').\r\ndictCategorias at: 'Dependencies and Tools' put: #('dependency' 'version conflict' 'build error' 'library' 'tool' 'package' 'plugin' 'integration' 'environment' 'configuration' 'docker' 'maven' 'gradle').\r\ndictCategorias at: 'Performance and Scalability' put: #('bottleneck' 'slow' 'scale' 'memory leak' 'throughput' 'latency' 'resource' 'load balancing' 'parallel' 'concurrency' 'threading' 'caching').\r\ndictCategorias at: 'Education and Training' put: #('training plan' 'lesson plan' 'teaching' 'learning' 'curriculum' 'educational' 'student' 'skill building' 'tutorial' 'guide' 'objectives' 'workshop' 'class' 'coding bootcamp').\r\ndictCategorias at: 'General Technical Queries' put: #('information' 'explain' 'description' 'author' 'story' 'data' 'conclusion' 'analysis' 'estimate' 'calculation' 'note' 'advice' 'question' 'query').\r\ndictCategorias at: 'Other Technical Topics' put: #('api' 'rest' 'graphql' 'http' 'https' 'json' 'xml' 'serialization' 'deserialization' 'tcp' 'udp' 'network' 'protocol' 'cloud' 'aws' 'azure' 'gcp').\r\n\r\n\"Paso 3: Inicializar resultado\"\r\nresultado := Dictionary new.\r\ndictCategorias keysDo: [:cat | resultado at: cat put: 0].\r\nresultado at: 'Sin categoría' put: 0.\r\n\r\n\"Paso 4: Recorrer y clasificar\"\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n    chatgptSharings do: [:chatgptSharing |\r\n        conversations := (chatgptSharing isKindOf: Dictionary)\r\n            ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n        conversations do: [:conv |\r\n            promptText := (conv isKindOf: Dictionary) & (conv includesKey: 'Prompt')\r\n                ifTrue: [(conv at: 'Prompt') asLowercase]\r\n                ifFalse: [''].\r\n            maxCount := 0.\r\n            maxCategory := ''.\r\n            dictCategorias keysAndValuesDo: [:cat :palabras |\r\n                | count |\r\n                count := 0.\r\n                palabras do: [:palabra |\r\n                    (promptText includesSubstring: palabra) ifTrue: [count := count + 1].\r\n                ].\r\n                count > maxCount ifTrue: [\r\n                    maxCount := count.\r\n                    maxCategory := cat.\r\n                ].\r\n            ].\r\n            (maxCategory isEmpty or: [maxCount = 0])\r\n                ifTrue: [resultado at: 'Sin categoría' put: ((resultado at: 'Sin categoría') + 1)]\r\n                ifFalse: [resultado at: maxCategory put: ((resultado at: maxCategory) + 1)].\r\n        ].\r\n    ].\r\n].\r\n\r\n\"Paso 5: Mostrar frecuencia absoluta\"\r\nTranscript show: 'Distribución final por categoría:'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    Transcript show: cat , ': ' , count printString; cr.\r\n].\r\n\r\n\"Paso 6: Mostrar porcentaje con dos decimales\"\r\ntotalRelevant := 0.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    (cat ~= 'Sin categoría') ifTrue: [\r\n        totalRelevant := totalRelevant + count.\r\n    ].\r\n].\r\nTranscript show: 'Distribución porcentual por categoría (excluye Sin categoría):'; cr.\r\nresultado keysAndValuesDo: [:cat :count |\r\n    (cat ~= 'Sin categoría') ifTrue: [\r\n        | percentage |\r\n        percentage := (count / totalRelevant) * 100.\r\n        Transcript show: cat , ': ' , (percentage printShowingDecimalPlaces: 2) , '%'; cr.\r\n    ].\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T10:21:50.001-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-20T10:22:06.705-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YCbzs/j9DQCCTJddBQJxwQ=="
+				},
+				"code" : "Transcript open."
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-20T09:29:44.405-03:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-20T09:29:44.405-03:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Page 2"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "2028a6f9-f7fd-0d00-8737-9eab0f09471c"
+	}
+}

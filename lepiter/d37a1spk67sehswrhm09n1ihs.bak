@@ -1,0 +1,484 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-03T09:55:21.389-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-03T09:55:21.389-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yE/1WaL8DQCNBpD3Bo0W3Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T14:06:47.165-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:15:26.036-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SPyZuuf9DQCKPdGQDVrVqQ=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T14:26:43.182-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:16:31.062-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "sMHjAej9DQCaurQcDN58KQ=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\ndictionary := STONJSON fromString: json.\nsources := dictionary at: 'Sources' ifAbsent: [#()].\nquintoSource := sources at: 5.\nidValue := (quintoSource isKindOf: Dictionary)\n    ifTrue: [quintoSource at: 'ID' ifAbsent: ['<Sin ID>']]\n    ifFalse: ['<Formato incorrecto>'].\nTranscript show: 'ID del quinto Source: ', idValue printString; cr."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T17:20:34.661-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T17:49:22.216-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "iH6nb+r9DQCpJyEJAGoUxQ=="
+				},
+				"code" : "\t\t\"Leer el archivo JSON y convertirlo a un diccionario\"\r\njson := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\n\r\n\"Obtener la lista de Sources\"\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\n\"Tomar el quinto elemento de Sources\"\r\nquintoSource := sources at: 5.\r\n\r\n\"Obtener ChatgptSharing del quinto source, si existe\"\r\nchatgptSharing := (quintoSource isKindOf: Dictionary)\r\n    ifTrue: [quintoSource at: 'ChatgptSharing' ifAbsent: [#()]]\r\n    ifFalse: [#()].\r\n\r\n\"Verificar si chatgptSharing es un arreglo no vacío\"\r\nisArrayNotEmpty := (chatgptSharing isKindOf: Array) and: [chatgptSharing notEmpty].\r\n\r\n\"Mostrar el título del primer elemento si existe\"\r\nisArrayNotEmpty\r\n    ifTrue: [\r\n        primerElemento := chatgptSharing first.\r\n        title := (primerElemento isKindOf: Dictionary)\r\n            ifTrue: [primerElemento at: 'Title' ifAbsent: ['<sin título>']]\r\n            ifFalse: ['<elemento no es diccionario>'].\r\n        Transcript show: 'Title del primer elemento en ChatgptSharing: ', title; cr.\r\n    ]\r\n    ifFalse: [\r\n        Transcript show: 'ChatgptSharing no es arreglo o está vacío'; cr.\r\n    ].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T17:34:57.915-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T17:54:27.839-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "eLQbo+r9DQCpnXMSAGoUxQ=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\n\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\nquintoSource := sources at: 5.\r\n\r\nchatgptSharing := (quintoSource isKindOf: Dictionary)\r\n    ifTrue: [quintoSource at: 'ChatgptSharing' ifAbsent: [#()]]\r\n    ifFalse: [#()].\r\n\r\nisArrayNotEmpty := (chatgptSharing isKindOf: Array) and: [chatgptSharing notEmpty].\r\n\r\nisArrayNotEmpty\r\n    ifTrue: [\r\n        primerElemento := chatgptSharing first.\r\n\r\n        conversations := (primerElemento isKindOf: Dictionary)\r\n            ifTrue: [primerElemento at: 'Conversations' ifAbsent: [#()]]\r\n            ifFalse: [#()].\r\n\r\n        conversations do: [:conv |\r\n            listOfCode := (conv isKindOf: Dictionary)\r\n                ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            listOfCode do: [:codeItem |\r\n                content := (codeItem isKindOf: Dictionary)\r\n                    ifTrue: [codeItem at: 'Content' ifAbsent: ['<sin contenido>']]\r\n                    ifFalse: ['<formato inesperado>'].\r\n                Transcript show: 'Contenido código: ', content; cr.\r\n            ].\r\n        ].\t\r\n    ]\r\n    ifFalse: [\r\n        Transcript show: 'ChatgptSharing no es arreglo o está vacío'; cr.\r\n    ].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T17:55:13.97-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:06:06.863-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UDuX6+r9DQC74utDA9G6eA=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\n\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\nquintoSource := sources at: 5.\r\n\r\nchatgptSharing := (quintoSource isKindOf: Dictionary)\r\n\tifTrue: [quintoSource at: 'ChatgptSharing' ifAbsent: [#()]]\r\n\tifFalse: [#()].\r\n\r\nisArrayNotEmpty := (chatgptSharing isKindOf: Array) and: [chatgptSharing notEmpty].\r\n\r\ncontador := 0.\r\n\r\nisArrayNotEmpty\r\n\tifTrue: [\r\n\t\tprimerElemento := chatgptSharing first.\r\n\r\n\t\tconversations := (primerElemento isKindOf: Dictionary)\r\n\t\t\tifTrue: [primerElemento at: 'Conversations' ifAbsent: [#()]]\r\n\t\t\tifFalse: [#()].\r\n\r\n\t\tconversations do: [:conv |\r\n\t\t\tlistOfCode := (conv isKindOf: Dictionary)\r\n\t\t\t\tifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n\t\t\t\tifFalse: [#()].\r\n\r\n\t\t\tlistOfCode do: [:codeItem |\r\n\t\t\t\t(content := (codeItem isKindOf: Dictionary)\r\n\t\t\t\t\tifTrue: [codeItem at: 'Content' ifAbsent: [nil]]\r\n\t\t\t\t\tifFalse: [nil]).\t\r\n\t\t\t\tcontent ifNotNil: [contador := contador + 1].\r\n\t\t\t].\r\n\t\t].\r\n\t\tTranscript show: 'Cantidad de fragmentos con Content: ', contador printString; cr.\r\n\t]\t\r\n\tifFalse: [\r\n\t\tTranscript show: 'ChatgptSharing no es arreglo o está vacío'; cr.\r\n\t].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:06:15.39-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:06:18.635-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MFeX6ev9DQCmtqaOCatHKg=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\n\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\ncontadorConversaciones := 0.\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    (chatgptSharings isKindOf: Array) ifTrue: [\r\n        chatgptSharings do: [:chatgptSharing |\r\n            conversations := (chatgptSharing isKindOf: Dictionary)\r\n                ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            (conversations isKindOf: Array) ifTrue: [\r\n                contadorConversaciones := contadorConversaciones + conversations size.\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\nTranscript show: 'Cantidad total de conversaciones: ', contadorConversaciones printString; cr.\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:25:58.288-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:36:53.895-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gO4YMOz9DQCjBN9HA7ZdAQ=="
+				},
+				"code" : "json := '1.json' asFileReference readStream contents.\r\ndictionary := STONJSON fromString: json.\r\n\r\nsources := dictionary at: 'Sources' ifAbsent: [#()].\r\n\r\ncontadorConversaciones := 0.\r\ncontadorCodigos := 0.\r\n\r\nsources do: [:source |\r\n    chatgptSharings := (source isKindOf: Dictionary)\r\n        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\n        ifFalse: [#()].\r\n\r\n    (chatgptSharings isKindOf: Array) ifTrue: [\r\n        chatgptSharings do: [:chatgptSharing |\r\n            conversations := (chatgptSharing isKindOf: Dictionary)\r\n                ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\n                ifFalse: [#()].\r\n\r\n            (conversations isKindOf: Array) ifTrue: [\r\n                contadorConversaciones := contadorConversaciones + conversations size.\r\n                conversations do: [:conv |\r\n                    listOfCode := (conv isKindOf: Dictionary)\r\n                        ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\n                        ifFalse: [#()].\r\n\r\n                    listOfCode do: [:codeItem |\r\n                        (codeItem isKindOf: Dictionary)\r\n                            ifTrue: [\r\n                                (codeItem at: 'Content' ifAbsent: [nil]) ifNotNil: [\r\n                                    contadorCodigos := contadorCodigos + 1\r\n                                ].\r\n                            ].\r\n                    ].\r\n                ].\r\n            ].\r\n        ].\r\n    ].\r\n].\r\n\r\nTranscript show: 'Cantidad total de conversaciones: ', contadorConversaciones printString; cr.\r\nTranscript show: 'Cantidad total de fragmentos con código: ', contadorCodigos printString; cr.\r\n\t\t"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:03:32.904-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:21:14.661-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "QKR7tuz9DQCla25/A7ZdAQ=="
+				},
+				"code" : "\tporcentaje := 0.\r\t\n\tcontadorConversaciones > 0 ifTrue: [\r\t\n\t    porcentaje := (contadorCodigos asFloat / contadorConversaciones) * 100.\r\t\n\t].\r\t\n\t\t\r\t\n\tTranscript show: 'Porcentaje aproximado de fragmentos de código por conversación: ', (porcentaje printShowingDecimalPlaces: 2), '%'; cr.\r\t\n\t"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:36:57.036-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:21:25.421-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4KBcV+z9DQCjFP9OA7ZdAQ=="
+				},
+				"code" : "\tdictLenguajes := Dictionary new.\r\t\n\t\r\t\n\tsources do: [:source |\r\t\n\t    chatgptSharings := (source isKindOf: Dictionary)\r\t\n\t        ifTrue: [source at: 'ChatgptSharing' ifAbsent: [#()]]\r\t\n\t        ifFalse: [#()].\r\t\n\t\r\t\n\t    (chatgptSharings isKindOf: Array) ifTrue: [\r\t\n\t        chatgptSharings do: [:chatgptSharing |\r\t\n\t            conversations := (chatgptSharing isKindOf: Dictionary)\r\t\n\t                ifTrue: [chatgptSharing at: 'Conversations' ifAbsent: [#()]]\r\t\n\t                ifFalse: [#()].\r\t\n\t\r\t\n\t            (conversations isKindOf: Array) ifTrue: [\r\t\n\t                conversations do: [:conv |\r\t\n\t                    listOfCode := (conv isKindOf: Dictionary)\r\t\n\t                        ifTrue: [conv at: 'ListOfCode' ifAbsent: [#()]]\r\t\n\t                        ifFalse: [#()].\r\t\n\t\r\t\n\t                    listOfCode do: [:codeItem |\r\t\n\t                        (codeItem isKindOf: Dictionary) ifTrue: [\r\t\n\t                            content := codeItem at: 'Content' ifAbsent: [nil].\r\t\n\t                            content ifNotNil: [\r\t\n\t                                | rawType typeCode |\r\t\n\t                                rawType := codeItem at: 'Type' ifAbsent: [nil].\r\t\n\t                                typeCode := nil.\r\t\n\t                                rawType ifNotNil: [\r\t\n\t                                    typeCode := (rawType isKindOf: Array) ifTrue: [rawType first] ifFalse: [rawType].\r\t\n\t                                ].\r\t\n\t                                typeCode ifNil: [typeCode := 'desconocido'].\r\t\n\t                                dictLenguajes at: typeCode\r\t\n\t                                    ifAbsentPut: [0].\r\t\n\t                                dictLenguajes at: typeCode put: ((dictLenguajes at: typeCode) + 1).\r\t\n\t                            ].\r\t\n\t                        ].\r\t\n\t                    ].\r\t\t\n\t                ].\r\t\n\t            ].\r\t\n\t        ].\r\t\n\t    ].\r\t\n\t].\r\t\n\t\r\t\n\tdictLenguajes keysAndValuesDo: [:key :value |\r\t\n\t\tTranscript show: key , ': ' , value printString; cr.\r\t\n\t].\r\t\t\n\t"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:51:05.947-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:08:32.599-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YP/1iez9DQCjX00MA7ZdAQ=="
+				},
+				"code" : "(dictLenguajes associations\r\n    sorted: [:a :b | a value > b value])\r\n    do: [:assoc |\r\n        Transcript show: assoc key , ': ' , assoc value printString; cr.\r\n    ].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:08:27.707-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T20:10:56.519-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ePoNyOz9DQCl1mL/A7ZdAQ=="
+				},
+				"code" : "| sorted top4 rest restTotal total top5 otrosDict porcentaje |\r\n\r\n\"Ordenar asociaciones de mayor a menor\"\r\nsorted := (dictLenguajes associations\r\n            sorted: [:a :b | a value > b value]).\r\n\r\n\"Tomar los primeros 4\"\r\ntop4 := sorted first: 4.\r\n\r\n\"Sumar el resto\"\r\nrest := sorted allButFirst: 4.\r\nrestTotal := rest inject: 0 into: [:sum :assoc | sum + assoc value].\r\n\r\n\"Calcular el total general\"\r\ntotal := (top4 inject: restTotal into: [:sum :assoc | sum + assoc value]) asFloat.\r\n\r\n\"Crear diccionario para 'Otros'\"\r\notrosDict := Dictionary new.\r\notrosDict at: 'Otros' put: restTotal.\r\n\r\n\"Crear arreglo final con los 5 elementos\"\r\ntop5 := top4 copy , otrosDict associations.\r\n\r\n\"Mostrar cada elemento con su porcentaje en decimal\"\r\ntop5 do: [:assoc |\r\n    porcentaje := (assoc value asFloat / total * 100) roundTo: 0.01. \"2 decimales\"\r\n    Transcript\r\n        show: assoc key , ': ' , assoc value printString , ' (' , porcentaje printString , '%)';\r\n        cr.\r\n].\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:46:54.713-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-19T19:47:34.398-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qHT8euz9DQCjP/GuA7ZdAQ=="
+				},
+				"code" : "Transcript open.\r\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-03T09:55:21.357-03:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-03T09:55:21.357-03:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Page 1"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "e0cef459-a2fc-0d00-8d05-022b068d16dd"
+	}
+}
