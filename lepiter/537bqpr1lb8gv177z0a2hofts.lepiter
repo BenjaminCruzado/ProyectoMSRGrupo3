@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:01:39.994-03:00"
+						"dateAndTimeString" : "2025-10-23T22:05:32.175-03:00"
 					}
 				},
 				"uid" : {
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T21:53:38.667-03:00"
+						"dateAndTimeString" : "2025-10-23T23:03:30.423-03:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "## Contexto del Proyecto\r\nEl proyecto del semestre consiste en abordar el desafío MSR 2024.  \r\n\r\nEl objetivo de esta competencia fue desarrollar estudios o herramientas que permitan comprender el contexto y las implicancias del uso de ChatGPT por parte de los desarrolladores de software.\r\n\r\nEn este contexto, nuestro grupo desarrollará una herramienta en GT que permita analizar el conjunto de datos de ChatGPT y desarrolladores, personalizando el análisis según las preguntas del dominio."
+				"string" : "## Contexto del Proyecto\r\nEl presente informe se enmarca en el desarrollo del proyecto correspondiente al desafío MSR 2024, iniciativa orientada a fomentar la investigación aplicada y el análisis de datos asociados a prácticas de desarrollo de software y uso de herramientas de inteligencia artificial.\n\nEl objetivo principal del desafío consiste en generar estudios, métricas y herramientas que permitan comprender el rol de ChatGPT en el trabajo cotidiano de los desarrolladores de software, así como los efectos que su adopción tiene en los procesos de aprendizaje, productividad y resolución de problemas técnicos.\n\nEn este contexto, nuestro grupo propuso el desarrollo de una herramienta analítica en GT, diseñada para procesar y visualizar datos provenientes de conversaciones entre ChatGPT y desarrolladores. Esta herramienta busca identificar patrones de interacción, evaluar la frecuencia y naturaleza de las consultas técnicas y proporcionar una visión más profunda del comportamiento de los usuarios frente al uso de modelos de lenguaje en entornos de desarrollo.\nEl propósito final es personalizar los análisis de acuerdo con preguntas específicas del dominio, aportando así a la comprensión del fenómeno desde una perspectiva cuantitativa y cualitativa."
 			},
 			{
 				"__type" : "textSnippet",
@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T21:54:01.729-03:00"
+						"dateAndTimeString" : "2025-10-23T23:07:48.829-03:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "##Consideraciones sobre los datos\r\nPara facilitar el desarrollo y prueba de la herramienta, se utilizó inicialmente un solo archivo JSON, al que se le asignó el nombre \"1.json\" para referenciarlo claramente en el código y en la documentación. Este JSON constituye una muestra representativa pero limitada de los datos totales, que comprenden miles de archivos distribuidos en distintos momentos."
+				"string" : "##Consideraciones sobre los datos\r\nPara la fase inicial del proyecto, se trabajó con un conjunto de datos reducido, representado por un único archivo JSON denominado “1.json” este json seria exactamente el json que esta en la carpeta “snapshot_20230727” archivo llamado “20230727_195816_hn_sharings.json”. Este archivo fue seleccionado como muestra representativa de un conjunto de datos mayor compuesto por miles de conversaciones distribuidas en distintos periodos y contextos de uso.\n\nLa decisión de utilizar una muestra acotada obedeció a fines metodológicos: permitió facilitar la validación de la herramienta, optimizar los tiempos de procesamiento y evaluar la consistencia de los resultados obtenidos.\nEl archivo JSON contiene datos estructurados que incluyen identificadores de conversación, mensajes, marcas temporales, fragmentos de código y metadatos asociados a las interacciones.\nEstos datos sirvieron como base para la construcción del modelo de dominio, permitiendo definir las entidades principales, sus relaciones y las consultas específicas que la herramienta debía ser capaz de responder.\n\nAsimismo, se consideraron criterios éticos y técnicos en el manejo de la información, asegurando la anonimización de los participantes y la protección de la integridad de los datos originales."
 			},
 			{
 				"__type" : "textSnippet",
@@ -166,6 +166,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:04:30.96-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:04:31.894-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mOkJtT/+DQC6jQ25CpoNAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "El modelo de dominio fue diseñado para responder a un conjunto de preguntas orientadas al análisis del comportamiento de los desarrolladores y las características de las respuestas generadas por ChatGPT. Entre las interrogantes principales se encuentran las siguientes:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-10-23T18:28:23.167-03:00"
 					}
 				},
@@ -188,6 +225,43 @@
 					"__type" : "textStyle"
 				},
 				"string" : "[[Pregunta 1]] ¿Qué porcentaje de las respuestas de ChatGPT contienen fragmentos de código, y para qué lenguajes de programación son más frecuentes?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:03:43.363-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:04:40.901-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6J8zsj/+DQC6f2OuCpoNAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Esta pregunta busca identificar la distribución de lenguajes de programación utilizados en las respuestas, con el propósito de caracterizar el tipo de asistencia técnica que los usuarios reciben y determinar si existen tendencias de uso dominantes (por ejemplo, Python o JavaScript). El resultado de este análisis permitirá inferir la relevancia de cada lenguaje dentro de los contextos de aprendizaje y desarrollo asistido por IA."
 			},
 			{
 				"__type" : "textSnippet",
@@ -240,6 +314,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:04:46.094-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:04:53.018-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yNbwtT/+DQC6m+bcCpoNAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Esta interrogante pretende clasificar las consultas de los usuarios en categorías semánticas y tipos de error, identificando patrones de recurrencia en los temas tratados. El análisis permitirá determinar si ChatGPT es utilizado predominantemente como herramienta de depuración, de aprendizaje conceptual, o de mejora de código existente, aportando así evidencia empírica sobre su rol en el ciclo de desarrollo."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-10-21T10:15:34.143-03:00"
 					}
 				},
@@ -262,6 +373,43 @@
 					"__type" : "textStyle"
 				},
 				"string" : "[[Pregunta 3]] ¿Cómo se distribuyen las conversaciones realizadas con ChatGPT a lo largo del día, considerando franjas horarias específicas como la mañana, la tarde y la noche?\t"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:04:56.288-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T23:05:03.615-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MF+Mtj/+DQC6pKA9CpoNAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Esta pregunta tiene como objetivo examinar la dinámica temporal de uso de la herramienta, buscando posibles correlaciones entre los horarios de interacción y los tipos de consulta. El estudio de esta dimensión temporal puede revelar hábitos de trabajo y patrones de comportamiento productivo entre los desarrolladores, lo que resulta valioso para futuras investigaciones sobre ergonomía digital y productividad asistida por IA."
 			}
 		]
 	},
