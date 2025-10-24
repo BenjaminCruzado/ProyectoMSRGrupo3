@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T21:48:09.191-03:00"
+						"dateAndTimeString" : "2025-10-23T21:47:13.867-03:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "En este análisis solo se utilizó un único archivo JSON extraído entre varios disponibles, lo que genera que todas las conversaciones pertenezcan prácticamente a la misma franja horaria y sólo difieran por minutos. Para un análisis completo y representativo, sería necesario operar sobre cientos de archivos JSON, lo que evidenciaría la verdadera dispersión horaria del uso de la plataforma."
+				"string" : ""
 			},
 			{
 				"__type" : "textSnippet",

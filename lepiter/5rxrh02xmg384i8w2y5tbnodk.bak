@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T18:17:22.044-03:00"
+						"dateAndTimeString" : "2025-10-23T20:36:52.823-03:00"
 					}
 				},
 				"uid" : {
@@ -501,14 +501,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T18:19:48.521-03:00"
+						"dateAndTimeString" : "2025-10-23T18:31:14.281-03:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "uHGcujv+DQCbjHT4CoCQYQ=="
 				},
-				"code" : "| porcentaje totalConversaciones totalConversacionesCodigo |\r\n\r\ntotalConversaciones := allConversations size.\r\ntotalConversacionesCodigo := conversationsWithCode size.\r\n\r\nporcentaje := 0.\r\ntotalConversaciones > 0 ifTrue: [\r\n    porcentaje := (totalConversacionesCodigo asFloat / totalConversaciones) * 100.\r\n].\r\n\r\n\"Retornamos el valor para visualización\"\r\nporcentaje\r\n"
+				"code" : "| porcentaje totalConversaciones totalConversacionesCodigo |\r\n\r\ntotalConversaciones := allConversations size.\r\ntotalConversacionesCodigo := conversationsWithCode size.\r\n\r\nporcentaje := 0.\r\ntotalConversaciones > 0 ifTrue: [\r\n    porcentaje := (totalConversacionesCodigo asFloat / totalConversaciones) * 100.\r\n].\r\n\r\n\"Retornamos el valor para visualización\"\r\nporcentaje"
 			},
 			{
 				"__type" : "textSnippet",

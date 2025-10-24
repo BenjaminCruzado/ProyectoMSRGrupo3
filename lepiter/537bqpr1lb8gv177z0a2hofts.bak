@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T18:29:17.949-03:00"
+						"dateAndTimeString" : "2025-10-23T21:53:38.667-03:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Contexto del Proyecto\r\nEl proyecto del semestre consiste en abordar el desafío MSR 2024.  \r\nEl objetivo de esta competencia fue desarrollar estudios o herramientas que permitan comprender el contexto y las implicancias del uso de ChatGPT por parte de los desarrolladores de software.\r\n\t\r\nEn este contexto, nuestro grupo desarrollará una herramienta en GT que permita analizar el conjunto de datos de ChatGPT y desarrolladores, personalizando el análisis según las preguntas del dominio."
+				"string" : "## Contexto del Proyecto\r\nEl proyecto del semestre consiste en abordar el desafío MSR 2024.  \r\n\r\nEl objetivo de esta competencia fue desarrollar estudios o herramientas que permitan comprender el contexto y las implicancias del uso de ChatGPT por parte de los desarrolladores de software.\r\n\r\nEn este contexto, nuestro grupo desarrollará una herramienta en GT que permita analizar el conjunto de datos de ChatGPT y desarrolladores, personalizando el análisis según las preguntas del dominio."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T21:53:44.204-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T21:54:01.729-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4JLptz7+DQCkC1gGAZSg3Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "##Consideraciones sobre los datos\r\nPara facilitar el desarrollo y prueba de la herramienta, se utilizó inicialmente un solo archivo JSON, al que se le asignó el nombre \"1.json\" para referenciarlo claramente en el código y en la documentación. Este JSON constituye una muestra representativa pero limitada de los datos totales, que comprenden miles de archivos distribuidos en distintos momentos."
 			},
 			{
 				"__type" : "textSnippet",
@@ -140,7 +177,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T18:28:45.981-03:00"
+						"dateAndTimeString" : "2025-10-23T21:58:25.253-03:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +187,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[Pregunta 1]] "
+				"string" : "[[Pregunta 1]] ¿Qué porcentaje de las respuestas de ChatGPT contienen fragmentos de código, y para qué lenguajes de programación son más frecuentes?"
 			},
 			{
 				"__type" : "textSnippet",
@@ -177,7 +214,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T18:28:25.413-03:00"
+						"dateAndTimeString" : "2025-10-23T19:03:05.775-03:00"
 					}
 				},
 				"uid" : {
@@ -187,7 +224,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : ""
+				"string" : "[[Pregunta 2]] "
 			},
 			{
 				"__type" : "textSnippet",
