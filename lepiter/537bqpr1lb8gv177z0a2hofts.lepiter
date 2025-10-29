@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T22:05:32.175-03:00"
+						"dateAndTimeString" : "2025-10-28T23:08:43.868-03:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "##Autores\r\n- **Nombres:** Benjamín Cruzado  e Ignacio Morales\r\n- **Profesor:** Pablo Valenzuela\r\n- **Fecha:** 24 de octubre de 2025  \t"
+				"string" : "##Autores \r\n- **Nombres:** Benjamín Cruzado  e Ignacio Morales\r\n- **Profesor:** Pablo Valenzuela\r\n- **Fecha:** 24 de octubre de 2025  \t"
 			},
 			{
 				"__type" : "textSnippet",
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T23:03:30.423-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:12.894-03:00"
 					}
 				},
 				"uid" : {
@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:15:15.879-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:28.396-03:00"
 					}
 				},
 				"uid" : {
@@ -177,7 +177,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T23:04:31.894-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:34.675-03:00"
 					}
 				},
 				"uid" : {

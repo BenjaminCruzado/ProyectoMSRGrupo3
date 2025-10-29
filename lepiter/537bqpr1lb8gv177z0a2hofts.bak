@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T22:05:32.175-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:05.929-03:00"
 					}
 				},
 				"uid" : {
@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T23:03:30.423-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:12.894-03:00"
 					}
 				},
 				"uid" : {
@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T23:07:21.735-03:00"
+						"dateAndTimeString" : "2025-10-23T23:07:48.829-03:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "##Consideraciones sobre los datos\r\nPara la fase inicial del proyecto, se trabajó con un conjunto de datos reducido, representado por un único archivo JSON denominado “1.json” este json seria exactamente el json que esta en la carpeta “snapshot_20230727” el j. Este archivo fue seleccionado como muestra representativa de un conjunto de datos mayor compuesto por miles de conversaciones distribuidas en distintos periodos y contextos de uso.\n\nLa decisión de utilizar una muestra acotada obedeció a fines metodológicos: permitió facilitar la validación de la herramienta, optimizar los tiempos de procesamiento y evaluar la consistencia de los resultados obtenidos.\nEl archivo JSON contiene datos estructurados que incluyen identificadores de conversación, mensajes, marcas temporales, fragmentos de código y metadatos asociados a las interacciones.\nEstos datos sirvieron como base para la construcción del modelo de dominio, permitiendo definir las entidades principales, sus relaciones y las consultas específicas que la herramienta debía ser capaz de responder.\n\nAsimismo, se consideraron criterios éticos y técnicos en el manejo de la información, asegurando la anonimización de los participantes y la protección de la integridad de los datos originales."
+				"string" : "##Consideraciones sobre los datos\r\nPara la fase inicial del proyecto, se trabajó con un conjunto de datos reducido, representado por un único archivo JSON denominado “1.json” este json seria exactamente el json que esta en la carpeta “snapshot_20230727” archivo llamado “20230727_195816_hn_sharings.json”. Este archivo fue seleccionado como muestra representativa de un conjunto de datos mayor compuesto por miles de conversaciones distribuidas en distintos periodos y contextos de uso.\n\nLa decisión de utilizar una muestra acotada obedeció a fines metodológicos: permitió facilitar la validación de la herramienta, optimizar los tiempos de procesamiento y evaluar la consistencia de los resultados obtenidos.\nEl archivo JSON contiene datos estructurados que incluyen identificadores de conversación, mensajes, marcas temporales, fragmentos de código y metadatos asociados a las interacciones.\nEstos datos sirvieron como base para la construcción del modelo de dominio, permitiendo definir las entidades principales, sus relaciones y las consultas específicas que la herramienta debía ser capaz de responder.\n\nAsimismo, se consideraron criterios éticos y técnicos en el manejo de la información, asegurando la anonimización de los participantes y la protección de la integridad de los datos originales."
 			},
 			{
 				"__type" : "textSnippet",
@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-21T10:15:15.879-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:28.396-03:00"
 					}
 				},
 				"uid" : {
@@ -177,7 +177,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-10-23T23:04:31.894-03:00"
+						"dateAndTimeString" : "2025-10-28T08:43:34.675-03:00"
 					}
 				},
 				"uid" : {

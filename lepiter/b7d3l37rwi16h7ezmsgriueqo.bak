@@ -580,6 +580,80 @@
 					"uidString" : "8FPYIjz+DQCbz8L8ACNCvQ=="
 				},
 				"code" : "\"Ordenar categorías por tamaño de colecciones, excluyendo 'Sin categoría'\"\r\nsortedCats := (dictCategoriasConvs associations\r\n    reject: [:assoc | assoc key = 'Sin categoría'])\r\n    sorted: [:a :b | (a value size) > (b value size)].\r\n\r\n\"Tomar los primeros 5\"\r\ntop5Cats := sortedCats first: (sortedCats size min: 5).\r\n\r\n\"Crear un diccionario con las top 5 categorías\"\r\ntop5Dict := Dictionary new.\r\ntop5Cats do: [:assoc |\r\n    top5Dict at: assoc key put: assoc value.\r\n].\r\n\r\n\"Retornar diccionario navegable con top 5 categorías y sus conversaciones\"\r\ntop5Dict\r\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:56:49.184-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:56:54.055-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ADk1Pzz+DQCc6K6GACNCvQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Advertencia sobre confiabilidad"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:57:02.766-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-23T18:57:03.078-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kIehPzz+DQCc7pqPACNCvQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Debido a que el análisis se basa en búsquedas de palabras clave en textos libres y la clasificación se realiza usando estructuras diccionarios que no siempre garantizan orden e integridad absoluta, los resultados obtenidos deben considerarse experimentales y aproximados.\r\n\r\nEste método puede pasar por alto algunas categorías o asignar incorrectamente algunas conversaciones debido a ambigüedades en los textos o palabras fuera de contexto. Por ello, los resultados no son un reflejo 100% fiel de la realidad, sino una guía para identificar tendencias principales en tipos de problemas."
 			}
 		]
 	},
