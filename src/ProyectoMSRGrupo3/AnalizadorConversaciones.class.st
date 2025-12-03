@@ -1,6 +1,6 @@
 Class {
-	#name : #AnalizadorConversaciones,
-	#superclass : #Object,
+	#name : 'AnalizadorConversaciones',
+	#superclass : 'Object',
 	#instVars : [
 		'jsonData',
 		'sources',
@@ -11,10 +11,12 @@ Class {
 		'navigationLevel',
 		'nivel'
 	],
-	#category : #'ProyectoMSRGrupo3-model'
+	#category : 'ProyectoMSRGrupo3-model',
+	#package : 'ProyectoMSRGrupo3',
+	#tag : 'model'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> categoriasPalabrasClave [
     ^ Dictionary newFrom: {
         'Debugging and Bugs' -> #('bug' 'error' 'exception' 'crash' 'fail' 'fix' 'issue' 'fault' 'defect' 'debug' 'panic' 'traceback' 'stack trace' 'problem' 'breakpoint').
@@ -35,7 +37,7 @@ AnalizadorConversaciones >> categoriasPalabrasClave [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> clasificarConversacionesPorCategoria [
     | dictCategoriasConvs dictCategorias promptText maxCount maxCategory convsForCat |
     
@@ -79,7 +81,7 @@ AnalizadorConversaciones >> clasificarConversacionesPorCategoria [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> conteoPorFranjaHoraria [
     | conteos |
     conteos := Dictionary new.
@@ -89,7 +91,7 @@ AnalizadorConversaciones >> conteoPorFranjaHoraria [
     ^ conteos
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> conversacionesPorFranjaHoraria [
     | franjaConversations |
     franjaConversations := Dictionary new.
@@ -118,7 +120,7 @@ AnalizadorConversaciones >> conversacionesPorFranjaHoraria [
     ^ franjaConversations
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> extractAllConversations [
     allConversations := OrderedCollection new.
     sources do: [:source |
@@ -136,7 +138,7 @@ AnalizadorConversaciones >> extractAllConversations [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> extractConversationsWithCode [
     conversationsWithCode := OrderedCollection new.
     sources do: [:source |
@@ -164,7 +166,7 @@ AnalizadorConversaciones >> extractConversationsWithCode [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> loadFromFile: aFileName [
     | jsonString dictionary |
     jsonString := aFileName asFileReference readStream contents.
@@ -177,17 +179,17 @@ AnalizadorConversaciones >> loadFromFile: aFileName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> sources [
 	^ sources
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> sources: anObject [
 	sources := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AnalizadorConversaciones >> topFiveLanguagesWithConversations [
 | sorted top5 top5Dict |
     dictLenguajesConvs := Dictionary new.
