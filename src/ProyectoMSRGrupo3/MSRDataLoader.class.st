@@ -16,6 +16,15 @@ MSRDataLoader >> initialize [
 ]
 
 { #category : 'as yet unclassified' }
+MSRDataLoader >> loadFromFile: fileName [
+    | jsonString json |
+    jsonString := (FileSystem workingDirectory / fileName) contents.
+    json := STON fromString: jsonString.
+    self loadFromJsonArray: (json at: 'Sources').
+
+]
+
+{ #category : 'as yet unclassified' }
 MSRDataLoader >> loadFromJsonArray: jsonArray [
     "jsonArray es una colección con cada objeto del dataset MSR"
     sources := jsonArray collect: [:dict | self parseSource: dict ].

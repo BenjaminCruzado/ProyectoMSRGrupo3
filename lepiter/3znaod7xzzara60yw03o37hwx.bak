@@ -66,14 +66,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-02T14:04:38.169-03:00"
+						"dateAndTimeString" : "2025-12-03T16:06:15.695-03:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "ulRm8kf8F0ObBbI1exTQJw=="
 				},
-				"code" : "Object subclass: #HNSource\r\n    instanceVariableNames: 'type id url author points attachedUrl title storyText createdAt commentsTotalCount chatgptSharings'\r\n    classVariableNames: ''\r\n    package: 'ProyectoMSRGrupo3'\r\n"
+				"code" : ""
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -293,6 +293,40 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-03T12:57:21.621-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-03T12:57:24.539-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jRJ9mIzwrkGog+cgCT0B7A=="
+				},
+				"code" : "Object subclass: #MSRConversationsTab\r\n    instanceVariableNames: 'source'\r\n    classVariableNames: ''\r\n    package: 'ProyectoMSRGrupo3'\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2025-12-02T15:00:17.526-03:00"
 					}
 				},
@@ -304,14 +338,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-02T16:13:51.408-03:00"
+						"dateAndTimeString" : "2025-12-03T16:30:26.513-03:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "GRd4G3ZF80O9kX4WL12DHQ=="
 				},
-				"code" : "loader := MSRDataLoader new.\r\njson := STON fromString: myJsonString.\r\nloader loadFromJsonArray: (json at: 'Sources').\r\n\r\nanalizador := MSRAnalyzer new.\r\nanalizador sources: loader sources.\r\r\n"
+				"code" : "loader := MSRDataLoader new.\r\nloader loadFromFile: '1.json'.\r\n\r\nanalizador := MSRAnalyzer new.\r\nanalizador sources: loader sources.\r\nloader sources do: [:s | s analyzer: analizador ].\r\n"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -372,7 +406,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-12-02T21:19:31.688-03:00"
+						"dateAndTimeString" : "2025-12-02T21:48:16.771-03:00"
 					}
 				},
 				"uid" : {
@@ -482,6 +516,74 @@
 					"uidString" : "Hl08nFSbtEK0WUtk3rSemQ=="
 				},
 				"code" : "franjas := analizador topFiveLanguages.\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-02T23:42:31.389-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-03T16:17:12.103-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "yQBhPxZHLUKa1oRiQQD+bQ=="
+				},
+				"code" : "(FileSystem workingDirectory / '1.json') exists.\r\n\r\n\r\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-03T13:00:35.337-03:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-12-03T16:14:08.822-03:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "7zFuwMY2ekK3qN3ckdAU0w=="
+				},
+				"code" : "Transcript show: 'myJsonString: ', myJsonString printString; cr.\r\n"
 			}
 		]
 	},
